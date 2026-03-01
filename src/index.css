@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global vit bakgrund – SEB-stil */
+html,
+body,
+#root {
+  background-color: #ffffff;
+}
+
+/* Skip link – döljs off-screen, synlig endast vid Tab-fokus (tangentbordsanvändare) */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 1rem;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: #44403c;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 1rem;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+/* Range slider – förbättrad design */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+}
+
+/* Track – tunnare, rundad */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  background: linear-gradient(to right, #e2e8f0 0%, #e2e8f0 100%);
+  border-radius: 9999px;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+}
+
+/* Thumb – större, tydligare, rundad, med hover */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: #44403c;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  margin-top: -8px;
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.05);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: #44403c;
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.05);
+}
+
+/* Print – rent utskrift av resultat */
+@media print {
+  .skip-link,
+  .no-print { display: none !important; }
+
+  body {
+    background: white !important;
+    color: #0f172a;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Sektioner som ska skrivas ut */
+  section[aria-label="Beräkningsresultat"],
+  figure,
+  #year-table-details {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Graf – fixa höjd för utskrift (Recharts ResponsiveContainer behöver explicit höjd) */
+  figure > div {
+    height: 280px !important;
+    min-height: 280px !important;
+  }
+
+  /* Tabell – dölj accordion-knapp, visa innehåll */
+  #year-table-details > button:first-child {
+    display: none;
+  }
+
+  #year-table-details [role="region"] {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Ta bort skuggor som blir ful på papper */
+  .print\\:shadow-none { box-shadow: none !important; }
+}
+
+/* Accordion – Motion hanterar animation, inner behåller layout */
+.accordion-content-inner {
+  overflow: hidden;
+}
+
+/* Touch – större thumb på mobil */
+@media (pointer: coarse) {
+  input[type="range"]::-webkit-slider-thumb {
+    width: 32px;
+    height: 32px;
+    margin-top: -12px;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 32px;
+    height: 32px;
+  }
+}

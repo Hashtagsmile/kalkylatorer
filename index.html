@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f172a" />
+    <style media="print">
+      @page { margin: 1.5cm; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    </style>
+    <!-- Skip link – kritisk CSS så den inte blänker till vid första laddning -->
+    <style>
+      .skip-link {
+        position: absolute;
+        top: -9999px;
+        left: 1rem;
+        z-index: 100;
+        padding: 0.75rem 1rem;
+        background: #44403c;
+        color: white;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        transition: top 0.2s;
+      }
+      .skip-link:focus {
+        top: 1rem;
+        outline: 2px solid white;
+        outline-offset: 2px;
+      }
+    </style>
+
+    <!-- Primary Meta Tags -->
+    <title>Kalkylatorer – Bolån, Pension, FIRE, Lön, CSN, Moms | Gratis verktyg</title>
+    <meta name="title" content="Kalkylatorer – Bolån, Pension, FIRE, Lön, CSN, Moms" />
+    <meta name="description" content="{{CALCULATOR_COUNT}} gratis kalkylatorer: bolån, pension, FIRE, ISK-skatt, lön, egenkostnad, timlön, CSN, skatteåterbäring, inflation, moms, procent, KALP. Räkna direkt i webbläsaren – ingen registrering krävs." />
+    <meta name="keywords" content="bolånekalkylator, pensionskalkylator, lönekalkylator, egenkostnadskalkylator, timlön, ISK-skatt, skatteåterbäring, CSN-kalkylator, inflationskalkylator, FIRE-kalkylator, KALP-kalkylator, momsräknare, procenträknare, ränta på ränta, amorteringskalkylator, nettolön, studielån, köpkraft, semesterersättning, RUT-avdrag" />
+    <meta name="robots" content="index, follow" />
+    <!-- SITE_URL ersätts vid build: VITE_SITE_URL=https://din-domän.se npm run build -->
+    <link rel="canonical" href="{{SITE_URL}}/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{SITE_URL}}/" />
+    <meta property="og:site_name" content="Kalkylatorer" />
+    <meta property="og:title" content="Kalkylatorer – Gratis kalkylatorer för sparande, pension, bolån och mer" />
+    <meta property="og:description" content="{{CALCULATOR_COUNT}} gratis kalkylatorer: bolån, pension, FIRE, lön, CSN, moms, procent. Räkna månadskostnad, nettolön, köpkraft – direkt i webbläsaren. Ingen registrering krävs." />
+    <meta property="og:image" content="{{SITE_URL}}/og-image.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="sv_SE" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kalkylatorer – Gratis kalkylatorer för sparande, pension, bolån och mer" />
+    <meta name="twitter:description" content="{{CALCULATOR_COUNT}} gratis kalkylatorer: bolån, pension, FIRE, lön, CSN, moms. Räkna direkt i webbläsaren – ingen registrering krävs." />
+    <meta name="twitter:image" content="{{SITE_URL}}/og-image.svg" />
+
+    <!-- AdSense - Uncomment and add your client ID when approved -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script> -->
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Hoppa till innehåll</a>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- JSON-LD Structured Data for WebApplication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Kalkylatorer",
+      "description": "{{CALCULATOR_COUNT}} gratis kalkylatorer för sparande, pension, bolån och mer: ränta-på-ränta, FIRE, ISK-skatt, pension, bolån, KALP, CSN, lön, egenkostnad, timlön, skatteåterbäring, semesterersättning, inflation, procent, moms. Räkna månadskostnad, nettolön, köpkraft – direkt i webbläsaren. Ingen registrering krävs.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SEK"
+      },
+      "inLanguage": "sv",
+      "featureList": ["Ränta på ränta", "FIRE-kalkylator", "ISK-skatt", "Pensionskalkylator", "Bolånekalkylator", "KALP-kalkylator", "CSN-kalkylator", "Lönekalkylator", "Egenkostnadskalkylator", "Timlön och månadslön", "Semesterersättning", "Skatteåterbäring", "Inflationskalkylator", "Procenträknare", "Momsräknare"]
+    }
+    </script>
+    <!-- FAQ Schema (startsida) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Är kalkylatorerna gratis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, alla {{CALCULATOR_COUNT}} kalkylatorer är helt gratis. Ingen registrering krävs. Alla beräkningar sker lokalt i din webbläsare – vi sparar inga uppgifter."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vilka kalkylatorer finns?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ränta på ränta, FIRE, pension, bolån, KALP, CSN, lön, semesterersättning, inflation, procent och moms. Alla är anpassade för svenska förhållanden."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Sparas mina uppgifter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nej. Alla beräkningar sker lokalt i din webbläsare. Vi sparar inga personuppgifter eller siffror du anger."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- BreadcrumbList Schema (startsida) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Hem", "item": "{{SITE_URL}}/" }
+      ]
+    }
+    </script>
+    <!-- HowTo Schema (generell användning) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Så använder du kalkylatorerna",
+      "description": "Steg-för-steg guide för att använda Kalkylatorers gratis verktyg.",
+      "step": [
+        { "@type": "HowToStep", "name": "Välj kalkylator", "text": "Bläddra bland {{CALCULATOR_COUNT}} kalkylatorer inom sparande, pension, bolån, lön och enkla verktyg." },
+        { "@type": "HowToStep", "name": "Fyll i dina uppgifter", "text": "Ange dina siffror – t.ex. lön, sparande, ränta eller belopp. Alla beräkningar sker lokalt i webbläsaren." },
+        { "@type": "HowToStep", "name": "Se resultatet", "text": "Resultatet visas direkt. Ingen registrering krävs – tjänsten är helt gratis." }
+      ]
+    }
+    </script>
+  </body>
+</html>
