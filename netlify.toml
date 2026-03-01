@@ -2,7 +2,14 @@
   command = "npm run build"
   publish = "dist"
 
-# SPA – alla routes serverar index.html (statiska filer i /assets/ serveras först)
+# Viktigt: /assets/* först – säkerställ att CSS/JS serveras (inte index.html)
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+  force = true
+
+# SPA – övriga routes serverar index.html
 [[redirects]]
   from = "/*"
   to = "/index.html"
