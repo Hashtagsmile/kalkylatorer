@@ -23,7 +23,7 @@ export function GlobalNav() {
             {SITE.name}
           </span>
         </Link>
-        <nav className="flex items-center gap-1 sm:gap-2" aria-label="Snabbnavigering">
+        <nav className="flex items-center gap-2 sm:gap-3" aria-label="Snabbnavigering">
           {QUICK_LINKS.map(({ label, href }) => (
             <Link
               key={href}

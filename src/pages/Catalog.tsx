@@ -175,9 +175,9 @@ export function Catalog() {
                         </div>
                         <h3 className="text-lg font-semibold text-stone-900 mb-2">{tool.title}</h3>
                         <p className="text-sm text-stone-600">{tool.description}</p>
-                        <span className="inline-flex items-center gap-1 mt-3 text-sm font-medium text-stone-600 group-hover:text-stone-900">
+                        <span className="inline-flex items-center gap-1.5 mt-3 text-sm font-medium text-stone-600 group-hover:text-stone-900">
                           Öppna kalkylatorn
-                          <span aria-hidden>→</span>
+                          <span aria-hidden className="inline-block">→</span>
                         </span>
                       </motion.div>
                     </Link>
