@@ -2,14 +2,8 @@
   command = "npm run build"
   publish = "dist"
 
-# SPA – alla routes serverar index.html
+# SPA – alla routes serverar index.html (statiska filer i /assets/ serveras först)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# Säkerställ korrekt MIME-typ för JS-moduler (fixar application/octet-stream-fel)
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
