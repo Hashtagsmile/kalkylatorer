@@ -12,7 +12,6 @@ Gratis ekonomikalkylatorer för sparande, pension, bolån, lön och mer. Alla be
 ## Kom igång
 
 ```bash
-cd passiv-inkomst
 npm install
 npm run dev
 ```
@@ -98,3 +97,5 @@ Deploya `dist/` till Vercel, Netlify eller liknande. Sätt miljövariablerna i d
 ## Källor
 
 Alla beräkningar bygger på officiella källor: Skatteverket, CSN, Pensionsmyndigheten, Finansinspektionen, Riksbanken, SCB. Källor anges i `config/links.ts` och `data/calculatorInfo.ts`.
+
+Underlaget bakom kalkylatorerna – researchunderlag, källverifiering och designgenomgångar – ligger i [`docs/`](docs/).
