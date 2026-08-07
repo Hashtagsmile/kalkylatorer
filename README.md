@@ -1,5 +1,8 @@
 # Kalkylatorer
 
+[![CI](https://github.com/Hashtagsmile/kalkylatorer/actions/workflows/ci.yml/badge.svg)](https://github.com/Hashtagsmile/kalkylatorer/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Gratis ekonomikalkylatorer för sparande, pension, bolån, lön och mer. Alla beräkningar sker lokalt i webbläsaren – ingen registrering krävs.
 
 ## Översikt
@@ -13,10 +16,10 @@ Gratis ekonomikalkylatorer för sparande, pension, bolån, lön och mer. Alla be
 
 ```bash
 npm install
-npm run dev
+npm run dev      # http://localhost:5173
+npm test         # 18 enhetstester för beräkningslogiken
+npm run build    # typkontroll (tsc) + produktionsbygge
 ```
-
-Öppna http://localhost:5173
 
 ## Projektstruktur
 
